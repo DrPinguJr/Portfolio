@@ -2,7 +2,9 @@ import { Routes, Route, Outlet } from "react-router-dom"
 import Navbar from "@/components/ui/navbar"
 import Home from "@/pages/Home"
 import ArcProject from "@/projects/arc"
-import PocketProject from "@/projects/pocket" // ✅ add
+import PocketProject from "@/projects/pocket"
+import EcoVisionProject from "@/projects/ecovision"
+
 
 function Layout() {
   return (
@@ -26,7 +28,8 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/projects/arc" element={<ArcProject />} />
-        <Route path="/projects/pocket" element={<PocketProject />} /> {/* ✅ */}
+        <Route path="/projects/pocket" element={<PocketProject />} />
+        <Route path="/projects/ecovision" element={<EcoVisionProject />} />
       </Route>
     </Routes>
   )

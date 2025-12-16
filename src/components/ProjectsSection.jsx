@@ -19,7 +19,14 @@ const PROJECTS = [
         title: "Pocket",
         type: "App",
         to: "/projects/pocket",
-        picture: "", // e.g. "/images/projects/pocket-cover.jpg"
+        picture: "src/assets/images/Mushroom_PVP.jpg", // e.g. "/images/projects/pocket-cover.jpg"
+    },
+    {
+        id: "ecovision",
+        title: "EcoVision",
+        type: "Website",
+        to: "/projects/ecovision",
+        picture: "src\assets\images\EcoCover.jpg", // EcoVisionCover (optional later)
     },
 ]
 
