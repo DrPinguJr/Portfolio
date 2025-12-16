@@ -27,22 +27,6 @@ export default function Navbar() {
                         >
                             <a href="/">Home</a>
                         </Button>
-
-                        <Button
-                            variant="ghost"
-                            className="text-white/90 hover:text-white hover:bg-white/10"
-                            asChild
-                        >
-                            <a href="#projects">Projects</a>
-                        </Button>
-
-                        <Button
-                            variant="ghost"
-                            className="text-white/90 hover:text-white hover:bg-white/10"
-                            asChild
-                        >
-                            <a href="#work">Work</a>
-                        </Button>
                     </nav>
 
                     {/* Center title */}
