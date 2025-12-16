@@ -1,25 +1,22 @@
-import Galaxy from "@/components/backgrounds/Galaxy"
+import ParticlesBackground from "@/components/backgrounds/ParticlesBackground"
 import ProjectsSection from "@/components/ProjectsSection"
 
 export default function Home() {
     return (
-        <div className="relative min-h-screen overflow-hidden bg-black text-white">
+        <div className="relative min-h-screen bg-black text-white">
             {/* background */}
-            <div className="absolute inset-0">
-                <Galaxy
-                    mouseRepulsion={true}
-                    mouseInteraction={true}
-                    density={3}          // HIGH density
-                    glowIntensity={0.7}
-                    saturation={0.5}
-                    hueShift={170}
-                    twinkleIntensity={0.4}
-                    rotationSpeed={0}
-                    repulsionStrength={1}
-                    autoCenterRepulsion={0}
-                    transparent={true}
-                />
-            </div>
+            <ParticlesBackground
+                fullScreen
+                zIndex={0}
+                particleColors={["#ffffff", "#ffffff"]}
+                particleCount={220}
+                particleSpread={10}
+                speed={0.12}
+                particleBaseSize={90}
+                moveParticlesOnHover={true}
+                alphaParticles={false}
+                disableRotation={false}
+            />
 
             {/* foreground (your UI goes here) */}
             <div className="relative z-10 mx-auto max-w-6xl px-6 py-16">
@@ -29,8 +26,10 @@ export default function Home() {
                 </div>
             </div>
 
-            <ProjectsSection />
-
+            {/* keep this on top too */}
+            <div className="relative z-10">
+                <ProjectsSection />
+            </div>
         </div>
     )
 }
