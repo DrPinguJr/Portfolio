@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "FS Didot";
-  src: url("/fonts/FSDidot.woff2") format("woff2"),
-    url("/fonts/FSDidot.woff") format("woff");
+  font-family: "FSDidot";
+  src:
+    url("./assets/fonts/FSDidot.woff2") format("woff2"),
+    url("./assets/fonts/FSDidot.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
