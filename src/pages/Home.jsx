@@ -1,4 +1,5 @@
 import Galaxy from "@/components/backgrounds/Galaxy"
+import ProjectsSection from "@/components/ProjectsSection"
 
 export default function Home() {
     return (
@@ -27,6 +28,9 @@ export default function Home() {
                     <p className="mt-2 text-white/70">Hero content goes here.</p>
                 </div>
             </div>
+
+            <ProjectsSection />
+
         </div>
     )
 }
