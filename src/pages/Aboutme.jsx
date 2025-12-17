@@ -8,41 +8,59 @@ import { Badge } from "@/components/ui/badge"
 import MeImg from "@/assets/images/CARTOON_ME.png"
 
 const STARS = [
+    // Anchor
     {
         id: "northstar",
         label: "North Star",
         type: "core",
-        x: 52,
-        y: 42,
-        desc: "I build practical products that feel good to use — where clean logic and clear people-skills meet.",
-        evidence: ["Portfolio projects", "Internship systems", "School builds"],
+        desc: "I connect people + tech to build clean, practical products that feel good to use.",
+        evidence: ["Portfolio builds", "Internship systems", "School projects"],
     },
 
-    { id: "react", label: "React", type: "hard", x: 28, y: 28, desc: "Component-driven UI, routing, reusable layouts, and polished interactions.", evidence: ["Portfolio website", "Project pages", "UI components"] },
-    { id: "flutter", label: "Flutter", type: "hard", x: 22, y: 62, desc: "Mobile UI, stateful screens, assets, and clean layout structure.", evidence: ["Calculator app", "Profile screen improvements"] },
-    { id: "csharp", label: "C# / ASP.NET", type: "hard", x: 76, y: 30, desc: "MVC patterns, controllers, views, AJAX updates, and workflow features.", evidence: ["OrderChecker", "CheckList features"] },
-    { id: "sql", label: "SQL", type: "hard", x: 84, y: 52, desc: "Stored procedures, filtering logic, performance tuning, reliable data flows.", evidence: ["LiveView SPs", "Report queries", "Business rules"] },
-    { id: "python", label: "Python", type: "hard", x: 66, y: 70, desc: "Automation pipelines, data processing, Excel outputs, and workflow speedups.", evidence: ["Processing scripts", "Data summaries", "Tooling helpers"] },
+    // TECH
+    { id: "python", label: "Python", type: "hard", desc: "Automation, scripting, and data workflows.", evidence: ["Jupyter notebooks", "Processing scripts", "Data summaries"] },
+    { id: "sql", label: "SQL", type: "hard", desc: "Queries, joins, and business logic in data.", evidence: ["Stored procedures", "Reports", "Filtering rules"] },
+    { id: "mysql", label: "MySQL", type: "hard", desc: "Relational DB work and schema thinking.", evidence: ["DBMS modules", "Project databases", "Query practice"] },
+    { id: "csharp", label: "C#", type: "hard", desc: "Building structured apps with clean logic.", evidence: ["ASP.NET MVC", "Controllers + views", "Workflow features"] },
+    { id: "js", label: "JavaScript", type: "hard", desc: "Interactive UI and web app behaviour.", evidence: ["React pages", "UI interactions", "Routing"] },
+    { id: "ts", label: "TypeScript", type: "hard", desc: "Safer JS with types and better structure.", evidence: ["React components", "Reusable modules", "Cleaner codebase"] },
+    { id: "htmlcss", label: "HTML/CSS", type: "hard", desc: "Layout, styling, responsiveness.", evidence: ["Portfolio UI", "Component styling", "Polished screens"] },
+    { id: "figma", label: "Figma", type: "hard", desc: "UI planning and quick prototyping.", evidence: ["Wireframes", "Layout planning", "Design iteration"] },
+    { id: "postman", label: "Postman", type: "hard", desc: "Testing APIs and debugging requests.", evidence: ["API testing", "Request validation", "Debug flows"] },
+    { id: "excel", label: "Excel", type: "hard", desc: "Working with data and readable outputs.", evidence: ["Reports", "Tables", "Exports"] },
+    { id: "vsc", label: "VS Code", type: "hard", desc: "Daily driver for building + debugging.", evidence: ["Frontend work", "Scripts", "Project structure"] },
+    { id: "jupyter", label: "Jupyter", type: "hard", desc: "Exploration, analysis, and quick experiments.", evidence: ["Python analysis", "Notebooks", "Iteration"] },
+    { id: "autopsy", label: "Autopsy", type: "hard", desc: "Digital forensics tooling and analysis.", evidence: ["Forensics labs", "Artifact review", "Casework practice"] },
+    { id: "dbeaver", label: "DBeaver", type: "hard", desc: "DB client workflows and SQL productivity.", evidence: ["Querying", "Schema browsing", "DB work"] },
 
-    { id: "communication", label: "Communication", type: "soft", x: 42, y: 16, desc: "I translate messy requirements into clear steps and keep people aligned.", evidence: ["Clarifying rules", "Explaining fixes", "Writing notes"] },
-    { id: "ownership", label: "Ownership", type: "soft", x: 12, y: 42, desc: "I follow bugs to the root cause, not just the symptoms.", evidence: ["Fixing bottlenecks", "Stabilising flows", "Edge-case handling"] },
-    { id: "perseverance", label: "Perseverance", type: "soft", x: 50, y: 84, desc: "I keep going until it works — then I make it clean.", evidence: ["Debug sessions", "UI refinements", "Iterative improvements"] },
-    { id: "teamwork", label: "Teamwork", type: "soft", x: 90, y: 18, desc: "I work smoothly with others, adapt fast, and make handovers easy.", evidence: ["Sharing progress", "Readable output", "Consistent structure"] },
+    // SOFT
+    { id: "adapt", label: "Adaptability", type: "soft", desc: "I learn new tools fast and adjust quickly.", evidence: ["New stacks", "New tasks", "Fast ramp-ups"] },
+    { id: "problem", label: "Problem-solving", type: "soft", desc: "I chase root causes, not just symptoms.", evidence: ["Debugging", "Edge cases", "Fix validation"] },
+    { id: "critical", label: "Critical thinking", type: "soft", desc: "I question assumptions and verify behaviour.", evidence: ["Testing", "Code review mindset", "Better decisions"] },
+    { id: "comm", label: "Communication", type: "soft", desc: "Clear, structured updates and explanations.", evidence: ["Handover notes", "Progress updates", "Write-ups"] },
+    { id: "team", label: "Teamwork", type: "soft", desc: "I collaborate smoothly and keep work aligned.", evidence: ["Pairing", "Sharing context", "Helping others"] },
+    { id: "resilience", label: "Resilience", type: "soft", desc: "I keep going until it’s stable and clean.", evidence: ["Long debugging", "Iteration", "Polish passes"] },
+    { id: "time", label: "Time management", type: "soft", desc: "I prioritise and ship the important parts first.", evidence: ["Task planning", "Deadlines", "Milestones"] },
+    { id: "discipline", label: "Self-discipline", type: "soft", desc: "Consistent progress, even on tough tasks.", evidence: ["Daily improvements", "Practice", "Follow-through"] },
+    { id: "ownership", label: "Ownership", type: "soft", desc: "I take accountability and deliver end-to-end.", evidence: ["Feature completion", "Fix tracking", "Reliable output"] },
+    { id: "curious", label: "Curiosity", type: "soft", desc: "I explore and experiment to find better solutions.", evidence: ["New tools", "Better approaches", "Learning loops"] },
+    { id: "analytical", label: "Analytical", type: "soft", desc: "I break problems into clear, testable parts.", evidence: ["Debug plans", "Data checks", "Structured thinking"] },
+    { id: "creative", label: "Creativity", type: "soft", desc: "I design solutions that look good and work well.", evidence: ["UI ideas", "Layouts", "User-friendly flows"] },
 ]
 
-const LINKS = [
-    ["react", "northstar"],
-    ["flutter", "northstar"],
-    ["csharp", "northstar"],
-    ["sql", "northstar"],
-    ["python", "northstar"],
-    ["communication", "react"],
-    ["communication", "csharp"],
-    ["ownership", "flutter"],
-    ["ownership", "sql"],
-    ["perseverance", "python"],
-    ["teamwork", "northstar"],
-]
+const deg = (d) => (d * Math.PI) / 180
+
+function placeOnRing(items, cx, cy, r, startDeg = -90, sx = 1.0, sy = 1.0) {
+    const n = Math.max(1, items.length)
+    return items.map((s, i) => {
+        const a = startDeg + (360 * i) / n
+        return {
+            ...s,
+            x: cx + Math.cos(deg(a)) * r * sx,
+            y: cy + Math.sin(deg(a)) * r * sy,
+        }
+    })
+}
 
 function typeMeta(type) {
     if (type === "hard") return { icon: <Wrench className="h-4 w-4" />, label: "Hard skill" }
@@ -50,61 +68,38 @@ function typeMeta(type) {
     return { icon: <Sparkles className="h-4 w-4" />, label: "Core" }
 }
 
-const deg = (d) => (d * Math.PI) / 180
-
 export default function Aboutme() {
     const [activeId, setActiveId] = useState("northstar")
 
-    // ✅ YOU: centered (feel free to tweak top)
+    // astronaut position
     const ME_POS = { left: "50%", top: "64%" }
 
-    // ===== ORBIT LAYOUT KNOBS (this is the “more space” part) =====
+    // constellation center (match the astronaut)
     const ORBIT = {
-        // center of the constellation in SVG coords (0..100)
         cx: 50,
         cy: 64,
-
-        // stretch X so it uses more horizontal space on wide screens
-        sx: 2.0,
+        sx: 2.0,      // wider spread
         sy: 1.0,
-
-        // radii
-        rOuter: 34,
-        rMid: 28,
-        rInner: 22,
-
-        // North Star fixed ABOVE you
-        northStar: { x: 52, y: 49 },
+        hardR: 20,    // inner ring radius
+        softR: 30,    // outer ring radius
+        north: { x: 52, y: 49 }, // North Star above you
     }
 
-    // Each star gets an angle + radius (bigger radius = more spread)
-    // Angles: 0° right, 90° down, 180° left, 270° up
-    const ORBIT_POS = {
-        communication: { a: 285, r: ORBIT.rOuter }, // top
-        teamwork: { a: 330, r: ORBIT.rOuter }, // top-right (away from panel a bit)
-        csharp: { a: 25, r: ORBIT.rMid }, // right-upper
-        sql: { a: 70, r: ORBIT.rMid }, // right
-        python: { a: 105, r: ORBIT.rOuter }, // bottom-right
-        perseverance: { a: 125, r: ORBIT.rInner }, // bottom
-        flutter: { a: 150, r: ORBIT.rMid }, // bottom-left
-        ownership: { a: 190, r: ORBIT.rMid }, // left
-        react: { a: 235, r: ORBIT.rMid }, // left-upper
-    }
-
+    // ✅ place stars with real x/y
     const stars = useMemo(() => {
-        return STARS.map((s) => {
-            if (s.id === "northstar") {
-                return { ...s, x: ORBIT.northStar.x, y: ORBIT.northStar.y }
-            }
+        const north = STARS.find((s) => s.id === "northstar")
+        const hard = STARS.filter((s) => s.type === "hard")
+        const soft = STARS.filter((s) => s.type === "soft")
 
-            const p = ORBIT_POS[s.id]
-            if (!p) return s
+        // rotate a bit so the right side has breathing room near the info panel
+        const hardPlaced = placeOnRing(hard, ORBIT.cx, ORBIT.cy, ORBIT.hardR, -135, ORBIT.sx, ORBIT.sy)
+        const softPlaced = placeOnRing(soft, ORBIT.cx, ORBIT.cy, ORBIT.softR, -95, ORBIT.sx, ORBIT.sy)
 
-            const x = ORBIT.cx + Math.cos(deg(p.a)) * p.r * ORBIT.sx
-            const y = ORBIT.cy + Math.sin(deg(p.a)) * p.r * ORBIT.sy
-
-            return { ...s, x, y }
-        })
+        return [
+            { ...north, x: ORBIT.north.x, y: ORBIT.north.y },
+            ...hardPlaced,
+            ...softPlaced,
+        ]
     }, [])
 
     const byId = useMemo(() => {
@@ -112,6 +107,28 @@ export default function Aboutme() {
         for (const s of stars) m.set(s.id, s)
         return m
     }, [stars])
+
+    // ✅ always valid connections
+    const links = useMemo(() => {
+        const out = []
+        for (const s of stars) if (s.id !== "northstar") out.push([s.id, "northstar"])
+
+        // optional “story” links (only add if both exist)
+        const extra = [
+            ["comm", "js"],
+            ["comm", "csharp"],
+            ["problem", "sql"],
+            ["critical", "sql"],
+            ["analytical", "python"],
+            ["creative", "figma"],
+            ["team", "comm"],
+        ]
+        for (const [a, b] of extra) {
+            if (byId.has(a) && byId.has(b)) out.push([a, b])
+        }
+
+        return out
+    }, [stars, byId])
 
     const active = byId.get(activeId) || byId.get("northstar")
 
@@ -144,7 +161,7 @@ export default function Aboutme() {
                             </feMerge>
                         </filter>
 
-                        {/* Hide lines behind the astronaut (now perfectly aligned because we removed transforms) */}
+                        {/* hide lines behind astronaut */}
                         <mask id="avoidBodyMask" maskUnits="userSpaceOnUse">
                             <rect x="0" y="0" width="100" height="100" fill="white" />
                             <circle cx={ORBIT.cx} cy={ORBIT.cy} r="14" fill="black" />
@@ -153,7 +170,7 @@ export default function Aboutme() {
 
                     {/* Links */}
                     <g mask="url(#avoidBodyMask)">
-                        {LINKS.map(([a, b]) => {
+                        {links.map(([a, b]) => {
                             const A = byId.get(a)
                             const B = byId.get(b)
                             if (!A || !B) return null
@@ -168,7 +185,8 @@ export default function Aboutme() {
                                     y2={B.y}
                                     stroke="rgba(255,255,255,1)"
                                     strokeWidth={0.22}
-                                    style={{ opacity: isHot ? 0.9 : 0.26, transition: "opacity 220ms ease" }}
+                                    strokeLinecap="round"
+                                    style={{ opacity: isHot ? 0.9 : 0.24, transition: "opacity 220ms ease" }}
                                 />
                             )
                         })}
@@ -178,7 +196,6 @@ export default function Aboutme() {
                     {stars.map((s) => {
                         const isActive = s.id === activeId
                         const isCore = s.type === "core"
-
                         return (
                             <g
                                 key={s.id}
@@ -216,7 +233,7 @@ export default function Aboutme() {
                 </svg>
             </div>
 
-            {/* You (behind constellation, so lines stay visible) */}
+            {/* You */}
             <div className="absolute z-10" style={{ left: ME_POS.left, top: ME_POS.top, transform: "translate(-50%, -50%)" }}>
                 <div className="relative">
                     <div className="absolute inset-0 -z-10 rounded-full blur-2xl bg-white/10" />
@@ -229,7 +246,7 @@ export default function Aboutme() {
                 </div>
             </div>
 
-            {/* Info panel (unchanged) */}
+            {/* Info panel */}
             <div className="absolute z-30 right-4 sm:right-8 top-[22%] sm:top-[24%] w-[320px] sm:w-[360px]">
                 <div className="rounded-2xl border border-white/10 bg-black/40 backdrop-blur-md p-5">
                     <div className="text-white font-semibold text-lg">{active?.label}</div>

@@ -5,7 +5,7 @@ import ArcProject from "@/projects/arc"
 import PocketProject from "@/projects/pocket"
 import EcoVisionProject from "@/projects/ecovision"
 import Aboutme from "@/pages/Aboutme"
-
+import Footer from "@/components/ui/footer"
 
 function Layout() {
   return (
@@ -14,14 +14,12 @@ function Layout() {
       <main className="flex-1">
         <Outlet />
       </main>
-      <footer className="border-t border-white/10 bg-black/60">
-        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-white/70">
-          Footer placeholder — LinkedIn / IG / GitHub later
-        </div>
-      </footer>
+
+      <Footer />
     </div>
   )
 }
+
 
 export default function App() {
   return (
