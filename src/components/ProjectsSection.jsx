@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 // ✅ import images from src/assets (Vite-friendly)
 import MushroomPVP from "@/assets/images/Mushroom_PVP.jpg"
 import EcoCover from "@/assets/images/EcoCover.jpg"
+import ArcCover from "@/assets/images/ArcCover.jpg"
 
 const FILTERS = ["All", "Website", "App"]
 
@@ -15,7 +16,7 @@ const PROJECTS = [
         title: "ARC",
         type: "Website",
         to: "/projects/arc",
-        picture: "", // add later if you want
+        picture: ArcCover, // ✅ fixed
     },
     {
         id: "pocket",
