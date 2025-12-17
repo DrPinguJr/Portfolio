@@ -3,30 +3,33 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Link } from "react-router-dom"
 
+// ✅ import images from src/assets (Vite-friendly)
+import MushroomPVP from "@/assets/images/Mushroom_PVP.jpg"
+import EcoCover from "@/assets/images/EcoCover.jpg"
+
 const FILTERS = ["All", "Website", "App"]
 
-// ✅ Add optional "picture" field for cover images (use later)
 const PROJECTS = [
     {
         id: "arc",
         title: "ARC",
         type: "Website",
         to: "/projects/arc",
-        picture: "", // e.g. "/images/projects/arc-cover.jpg"
+        picture: "", // add later if you want
     },
     {
         id: "pocket",
         title: "Pocket",
         type: "App",
         to: "/projects/pocket",
-        picture: "src/assets/images/Mushroom_PVP.jpg", // e.g. "/images/projects/pocket-cover.jpg"
+        picture: MushroomPVP, // ✅ fixed
     },
     {
         id: "ecovision",
         title: "EcoVision",
         type: "Website",
         to: "/projects/ecovision",
-        picture: "src\assets\images\EcoCover.jpg", // EcoVisionCover (optional later)
+        picture: EcoCover, // ✅ fixed
     },
 ]
 
@@ -41,7 +44,6 @@ function ProjectCard({ title, to, picture }) {
                 "transition-transform duration-300 hover:-translate-y-1"
             )}
         >
-            {/* ✅ Cover image if provided, fallback gradient if not */}
             {picture ? (
                 <img
                     src={picture}
@@ -53,10 +55,8 @@ function ProjectCard({ title, to, picture }) {
                 <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent" />
             )}
 
-            {/* Dark overlay for readability */}
             <div className="absolute inset-0 bg-black/25 transition-colors duration-300 group-hover:bg-black/60" />
 
-            {/* Title reveal */}
             <div className="absolute inset-0 flex items-center justify-center">
                 <div className="translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="rounded-full border border-white/15 bg-black/50 px-5 py-2 text-sm tracking-wide text-white">
@@ -65,7 +65,6 @@ function ProjectCard({ title, to, picture }) {
                 </div>
             </div>
 
-            {/* Corner label */}
             <div className="relative z-10 p-5 text-white/80">
                 <div className="text-xs uppercase tracking-widest opacity-70">Project</div>
             </div>
@@ -117,12 +116,7 @@ export default function ProjectsSection() {
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {filtered.map((p) => (
-                        <ProjectCard
-                            key={p.id}
-                            title={p.title}
-                            to={p.to}
-                            picture={p.picture}
-                        />
+                        <ProjectCard key={p.id} title={p.title} to={p.to} picture={p.picture} />
                     ))}
 
                     {filtered.length === 0 && (

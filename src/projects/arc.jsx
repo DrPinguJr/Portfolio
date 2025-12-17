@@ -1,4 +1,5 @@
-// ✅ 3) Update src/projects/arc.jsx to match your layout mock (left code, right 2 images)
+// src/projects/arc.jsx
+// ✅ Match Pocket/EcoVision layout: full-page particles, wide container, code left + images right
 
 import CodeViewer from "@/components/CodeViewer"
 import { PROJECT_CODE } from "./projectCodeConfig"
@@ -9,53 +10,46 @@ export default function ArcProject() {
     const cfg = PROJECT_CODE.arc
 
     return (
-        <div className="min-h-screen">
-            {/* particles background behind the top area only */}
-            <section className="relative overflow-hidden">
-                <ParticlesBackground height="320px" />
-                <div className="relative z-[1] mx-auto max-w-6xl px-4 pt-10 pb-6">
-                    <h1 className="text-3xl sm:text-4xl font-semibold">ARC</h1>
-                    <p className="mt-2 text-white/70">
-                        Code + screenshots
-                    </p>
-                </div>
-            </section>
+        <div className="min-h-screen w-full relative">
+            {/* full-page background */}
+            <ParticlesBackground fullScreen zIndex={0} particleCount={220} speed={0.12} />
 
-            {/* main grid like your drawing */}
-            <section className="mx-auto max-w-7xl px-4 pb-16">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                    {/* LEFT: code (wider) */}
-                    <div className="lg:col-span-5">
+            {/* content */}
+            <div className="relative z-10 w-full px-6 pt-10 pb-16">
+                <h1 className="text-4xl font-semibold">ARC</h1>
+                <p className="mt-2 text-white/70">Code + screenshots</p>
+
+                <div className="mt-8 grid grid-cols-1 2xl:grid-cols-12 gap-10 items-start">
+                    {/* code */}
+                    <div className="2xl:col-span-7">
                         <CodeViewer
                             title={cfg.title}
                             github={cfg.github}
                             files={{ "my-highlights/what-i-changed.ts": `// paste your edits here` }}
-                            height={620}
+                            height={900}
                         />
                     </div>
 
-                    {/* RIGHT: 2 stacked image cards */}
-                    <div className="lg:col-span-2 grid grid-rows-2 gap-8">
+                    {/* images */}
+                    <div className="2xl:col-span-5 grid gap-10">
                         <Card className="border-white/10 bg-white/5 rounded-2xl overflow-hidden">
                             <CardContent className="p-0">
-                                <div className="h-[260px] w-full bg-white/10 flex items-center justify-center text-white/50">
+                                <div className="h-[420px] w-full bg-white/10 flex items-center justify-center text-white/60">
                                     Image 1
-                                    {/* later: <img src="/images/arc-1.png" className="h-full w-full object-cover" /> */}
                                 </div>
                             </CardContent>
                         </Card>
 
                         <Card className="border-white/10 bg-white/5 rounded-2xl overflow-hidden">
                             <CardContent className="p-0">
-                                <div className="h-[260px] w-full bg-white/10 flex items-center justify-center text-white/50">
+                                <div className="h-[420px] w-full bg-white/10 flex items-center justify-center text-white/60">
                                     Image 2
-                                    {/* later: <img src="/images/arc-2.png" className="h-full w-full object-cover" /> */}
                                 </div>
                             </CardContent>
                         </Card>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     )
 }

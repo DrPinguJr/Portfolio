@@ -1,5 +1,8 @@
 import ParticlesBackground from "@/components/backgrounds/ParticlesBackground"
 import ProjectsSection from "@/components/ProjectsSection"
+import Portfolio from "@/components/Portfolio"
+import ExperiencePlanet from "@/components/ExperiencePlanet"
+import Experience from "@/components/Experience"
 
 export default function Home() {
     return (
@@ -31,10 +34,16 @@ export default function Home() {
                 </div>
             </div>
 
+            {/* code right under hero */}
+            <Portfolio />
 
             {/* keep this on top too */}
             <div className="relative z-10">
                 <ProjectsSection />
+            </div>
+
+            <div className="mt-28 sm:mt-36">
+                <Experience />
             </div>
         </div>
     )
