@@ -4,6 +4,7 @@ import Home from "@/pages/Home"
 import ArcProject from "@/projects/arc"
 import PocketProject from "@/projects/pocket"
 import EcoVisionProject from "@/projects/ecovision"
+import Aboutme from "@/pages/Aboutme"
 
 
 function Layout() {
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/projects/arc" element={<ArcProject />} />
         <Route path="/projects/pocket" element={<PocketProject />} />
         <Route path="/projects/ecovision" element={<EcoVisionProject />} />
+        <Route path="/about" element={<Aboutme />} />
       </Route>
     </Routes>
   )

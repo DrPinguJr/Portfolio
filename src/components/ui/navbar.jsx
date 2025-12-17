@@ -45,7 +45,7 @@ export default function Navbar() {
                             asChild
                         >
                             {/* If your About is on Home page as an anchor, this is simplest */}
-                            <a href={`${import.meta.env.BASE_URL}#about`}>About Me</a>
+                            <a href={`/about`}>About Me</a>
                         </Button>
                     </nav>
                 </div>
